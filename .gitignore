@@ -1,3 +1,4 @@
 
 *.pyc
 temp.ipynb
+secrets.json
