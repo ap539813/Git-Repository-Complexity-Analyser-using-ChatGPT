@@ -3,17 +3,21 @@ import streamlit as st
 import json
 import os
 # importing the local modules
-from important_variables import model_name
+from important_variables import model_name, style_css
 from application_pages import main, homepage
 
 import openai
-# from langchain.llms import OpenAI
-# import langchain.llms
 from langchain.chat_models import ChatOpenAI
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 st.set_page_config(layout="wide")
 
 alt.renderers.set_embed_options(scaleFactor=2)
+
+local_css(style_css)
 
 with open('secrets.json') as f:
     data = json.load(f)
