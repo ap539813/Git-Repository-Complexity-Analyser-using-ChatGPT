@@ -3,6 +3,8 @@ import base64
 
 git_api = "https://api.github.com/users/username/repos"
 
+model_name = "gpt-3.5-turbo"
+
 
 theme_image_name = 'git_bot_theme.png'
 logo_image = 'git_bot_theme.png'
