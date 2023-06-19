@@ -5,7 +5,7 @@ import git
 import json
 
 def filter_code_files(file_paths):
-    # List of code file extensions. You can modify this list according to your needs.
+    # List of code file extensions.
     code_file_extensions = ['.py', '.js', '.java', '.c', '.cpp', '.cs', '.go', '.rb', '.php', '.ipynb', '.md']
 
     code_files = [file for file in file_paths if os.path.splitext(file)[1] in code_file_extensions]
@@ -57,7 +57,6 @@ def clone_and_preprocess(repo_url):
     # Clone the repo
     try:
         git.Git().clone(repo_url)
-        # Assume repo name is last part of URL
         repo_name = repo_url.split('/')[-1]
         # Gather all file paths
         file_paths = []
@@ -67,7 +66,6 @@ def clone_and_preprocess(repo_url):
 
         file_paths = filter_code_files(file_paths)
 
-        # Preprocess files (simplified)
         preprocessed_files = {}
         for file_path in file_paths:
             try:
@@ -81,7 +79,6 @@ def clone_and_preprocess(repo_url):
                 print(f"Couldn't process file {file_path}. Reason: {e}")
     except Exception as e:
         if 'exists and is not an empty directory.' in str(e):
-            # Assume repo name is last part of URL
             repo_name = repo_url.split('/')[-1]
             print(os.listdir(repo_name))
 
@@ -94,7 +91,6 @@ def clone_and_preprocess(repo_url):
                     file_paths.append(os.path.join(repo_name, file))
             file_paths = filter_code_files(file_paths)
 
-            # Preprocess files (simplified)
             preprocessed_files = {}
             for file_path in file_paths:
                 try:
