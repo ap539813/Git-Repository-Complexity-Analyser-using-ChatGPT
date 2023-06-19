@@ -2,11 +2,9 @@ import altair as alt
 import streamlit as st
 import json
 import os
-# importing the local modules
 from important_variables import model_name, style_css
 from application_pages import main, homepage
 
-import openai
 from langchain.chat_models import ChatOpenAI
 
 def local_css(file_name):
