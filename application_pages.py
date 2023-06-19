@@ -11,6 +11,7 @@ def main():
     username = st.text_input("Input Git Use Id:")
     if username != '':
         result = get_github_repos(username, git_api)
+        st.write(result)
         try:
             repo_links = [git_repo['html_url'] for git_repo in result]
             # st.write(repo_links)
