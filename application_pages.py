@@ -1,6 +1,5 @@
 import streamlit as st
 from important_variables import logo_image
-from langchain.llms import OpenAI
 from langchain import PromptTemplate, LLMChain
 
 
@@ -55,8 +54,7 @@ def main():
                         conversation_history = conversation_history,
                         filenames = preprocessed_files,
                     )
-                    # st.write(git_repo)
-                    # st.write(answer_repo)
+
 
                     conversation_history += f'REPOSITORY NAME:\n{username}/{git_repo}\n\nSUMMARY:\n{answer_repo}'
                     # st.write(f'REPOSITORY NAME:\n{git_repo}\n{conversation_history}')
