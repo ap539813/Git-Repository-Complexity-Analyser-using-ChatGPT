@@ -27,12 +27,12 @@ alt.renderers.set_embed_options(scaleFactor=2)
 local_css(style_css)
 
 # Load the API key from a JSON file
-with open('secrets.json') as f:
-    data = json.load(f)
+# with open('secrets.json') as f:
+#     data = json.load(f)
 
 # Set the API key as an environment variable
 # os.environ["OPENAI_API_KEY"] = data['api_key']
-os.environ["GIT_API"] = data['api_key']
+# os.environ["GIT_API"] = data['api_key']
 
 # Set the GPT model in the session state
 st.session_state['GPT'] = ChatOpenAI(temperature=0.7, model=model_name)
