@@ -14,7 +14,6 @@ def main():
     if username != '':
         # Get the GitHub repositories of the user
         result = get_github_repos(username, git_api)
-        st.write(result)
         try:
             # Extract the URLs of the repositories
             repo_links = [git_repo['html_url'] for git_repo in result]
