@@ -4,7 +4,7 @@ import os
 import git
 # json module for parsing and manipulating JSON data
 import json
-import time
+import streamlit as st
 
 # Function to filter out code files based on their extensions
 def filter_code_files(file_paths):
@@ -74,6 +74,7 @@ def get_github_repos(user_url, git_api):
     
     # Replacing 'username' in the git_api URL with the actual username
     git_api = git_api.replace('username', username)
+    st.write(git_api)
     
     # Sending a GET request to the GitHub API with authentication
     response = requests.get(git_api, headers={'Authorization': f'token {api_key}'})
