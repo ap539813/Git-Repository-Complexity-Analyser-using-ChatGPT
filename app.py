@@ -1,8 +1,6 @@
 # Import necessary modules for data visualization, web app building and data processing
 import altair as alt
 import streamlit as st
-import json
-import os
 
 # Import user-defined variables and page configurations
 from important_variables import model_name, style_css, icon_logo
