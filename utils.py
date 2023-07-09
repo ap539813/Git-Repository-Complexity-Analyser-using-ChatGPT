@@ -79,14 +79,14 @@ def get_github_repos(user_url, git_api):
     response = requests.get(git_api, headers={'Authorization': f'token {api_key}'})
     
     # Checking the rate limit status
-    remaining_requests = int(response.headers.get('X-RateLimit-Remaining', 0))
-    reset_time = int(response.headers.get('X-RateLimit-Reset', 0))
+    # remaining_requests = int(response.headers.get('X-RateLimit-Remaining', 0))
+    # reset_time = int(response.headers.get('X-RateLimit-Reset', 0))
     
-    if remaining_requests == 0:
-        # Rate limit exceeded, wait until reset_time and then retry
-        wait_time = reset_time - time.time() + 10  # Add an additional buffer of 10 seconds
-        time.sleep(wait_time)
-        return get_github_repos(user_url)
+    # if remaining_requests == 0:
+    #     # Rate limit exceeded, wait until reset_time and then retry
+    #     wait_time = reset_time - time.time() + 10  # Add an additional buffer of 10 seconds
+    #     time.sleep(wait_time)
+    #     return get_github_repos(user_url)
     
     # Parsing the JSON response
     repos = response.json()
