@@ -112,7 +112,8 @@ def main():
 # Function for displaying the homepage
 def homepage():
     # Display the logo image
-    home_image = st.image(logo_image)
+    _, image_col, _ = st.columns([1, 6, 1])
+    home_image = image_col.image(logo_image, )
 
     _, c2, _ = st.columns([2,1,2])
     c2.markdown('') 
