@@ -61,22 +61,22 @@ def tokenize_and_chunk(content, max_tokens=1000):
 
 
 # Function to get a list of all the repositories of a GitHub user
-def get_github_repos(user_url):
+def get_github_repos(user_url, git_api):
     # Extracting the username from the URL
     username = user_url.split('/')[-1]
     
     # Getting the GitHub API token from the environment variable
-    git_api = os.getenv('GIT_API')
+    api_key = os.getenv('GIT_API')
     
     # Checking if the API token is available
-    if git_api is None:
+    if api_key is None:
         return ValueError("GitHub API token not found. Set the GIT_API environment variable.")
     
     # Replacing 'username' in the git_api URL with the actual username
     git_api = git_api.replace('username', username)
     
     # Sending a GET request to the GitHub API with authentication
-    response = requests.get(git_api, headers={'Authorization': f'token {git_api}'})
+    response = requests.get(git_api, headers={'Authorization': f'token {api_key}'})
     
     # Checking the rate limit status
     remaining_requests = int(response.headers.get('X-RateLimit-Remaining', 0))
