@@ -75,6 +75,7 @@ def get_github_repos(user_url, git_api):
     # Replacing 'username' in the git_api URL with the actual username
     git_api = git_api.replace('username', username)
     st.write(git_api)
+    st.write(api_key)
     
     # Sending a GET request to the GitHub API with authentication
     response = requests.get(git_api, headers={'Authorization': f'token {api_key}'})
