@@ -71,7 +71,6 @@ def main():
                     conversation_history += f'REPOSITORY NAME:\n{username}/{git_repo}\n\nSUMMARY:\n{code_summary}'
                     # Display the repository name and summary
                     repo_i = repo_col.expander(f'Description of: {git_repo}')
-                    repo_i.markdown(f'### REPOSITORY NAME: {username}/{git_repo}')
                     repo_i.markdown(f'{code_summary}', unsafe_allow_html = True)
 
                 # Template for comparing repositories and identifying the most complex one
