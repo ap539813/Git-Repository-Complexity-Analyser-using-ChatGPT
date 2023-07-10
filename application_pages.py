@@ -83,8 +83,9 @@ def main():
 
                 Instructions:
                 Refer to the Conversation history. Give answer in two sections with following headings and required subheadings:
-                    1. Most Complex code Repository: 
-                    2. Explanation
+                    1. Most Complex code Repository (This will contain the name of the most complex repository)
+                    2. Table of complexities (This will contain a table containing the complexity ranking of all the analysed repositories)
+                    2. Explanation (This will contain the explanation)
                 Provide output in .md text format
                 """
 
