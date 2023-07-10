@@ -48,6 +48,7 @@ def main():
                         a. Included Code Files
                         b. Code Summary
                         c. Space and Time Complexity
+                    5. Provide output in .md text format
 
                     Answer:
                     """
@@ -84,7 +85,7 @@ def main():
                 Refer to the Conversation history. Give answer in two sections with following headings and required subheadings:
                     1. Most Complex code Repository: 
                     2. Explanation
-                Provide output in html format
+                Provide output in .md text format
                 """
 
                 # Create a PromptTemplate instance with the template and input variables
